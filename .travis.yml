@@ -4,4 +4,4 @@ php:
 before_install:
   - composer self-update --rollback
   - composer install
-script: ./vendor/bin/phpunit
+script: phpunit --version
