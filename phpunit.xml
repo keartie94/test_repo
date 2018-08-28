@@ -7,4 +7,10 @@
              <directory>test</directory>
            </testsuite>
          </testsuites>
+
+         <filter>
+           <whitelist>
+            <directory suffix=".php">./app</directory>
+           </whitelist>
+         </filter>
        </phpunit>
