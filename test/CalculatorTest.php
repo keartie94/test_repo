@@ -1,6 +1,9 @@
 <?php
 
 //require "vendor/autoload.php";
+require 'coveralls';
+Coveralls.wear!;
+
 use PHPUnit\Framework\TestCase;
 
 class CalculatorTest extends TestCase{
