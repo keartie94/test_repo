@@ -9,4 +9,6 @@ install:
 script:
   - phpunit --version
   - composer dump-autoload
-  - phpunit
+  - phpunit --coverage-clover ./tests/logs/clover.xml
+after_script:
+  - php coveralls -v
