@@ -2,7 +2,7 @@
 
 //require "vendor/autoload.php";
 require 'coveralls';
-Coveralls.wear!;
+Coveralls.wear!
 
 use PHPUnit\Framework\TestCase;
 
