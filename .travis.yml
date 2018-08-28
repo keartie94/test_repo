@@ -3,5 +3,9 @@ php:
   - 7.1.1
 before_install:
   - composer self-update --rollback
+install:
   - composer install
-script: phpunit --version
+script:
+  - phpunit --version
+  - composer dump-autoload
+  - phpunit test/
