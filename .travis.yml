@@ -5,6 +5,7 @@ before_install:
   - composer self-update --rollback
 install:
   - composer install
+  - composer require php-coveralls/php-coveralls
 script:
   - phpunit --version
   - composer dump-autoload
