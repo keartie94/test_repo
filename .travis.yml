@@ -8,4 +8,4 @@ install:
 script:
   - phpunit --version
   - composer dump-autoload
-  - phpunit test/
+  - phpunit
