@@ -4,11 +4,11 @@ php:
 before_install:
   - composer self-update --rollback
 install:
-  - composer install
   - composer require php-coveralls/php-coveralls
+  - composer install  
 script:
   - phpunit --version
   - composer dump-autoload
   - phpunit --coverage-clover ./tests/logs/clover.xml
 after_script:
-  - php-coveralls -v
+  - php vendor/bin/coveralls -v
