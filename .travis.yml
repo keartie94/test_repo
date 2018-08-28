@@ -4,7 +4,7 @@ php:
 before_install:
   - composer self-update --rollback
 install:
-  - composer require php-coveralls/php-coveralls
+  - composer require satooshi/php-coveralls:~0.6@stable
   - composer install
 before_script:
   - mkdir -p ./tests/logs
