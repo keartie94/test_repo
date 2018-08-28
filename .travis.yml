@@ -3,4 +3,4 @@ php:
   - 7.1.1
 before_install:
   - composer self-update --rollback
-script: phpunit -c phpunit.xml
+script: phpunit --bootstrap src/autoload.php
