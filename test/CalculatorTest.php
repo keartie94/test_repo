@@ -14,6 +14,10 @@ class CalculatorTest extends TestCase{
     $calc=new Calculator;
     $this->assertEquals(3,$calc->subtract(5,2));
   }
+  public function testDivide(){
+    $calc=new Calculator;
+    $this->assertEquals(3,$calc->divide(12,4));
+  }
 }
 
 
