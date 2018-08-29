@@ -12,7 +12,7 @@ class CalculatorTest extends TestCase{
 
   public function testSubtractNumbers(){
     $calc=new Calculator;
-    $this=assertEquals(3,$calc->subtract(5,2));
+    $this->assertEquals(3,$calc->subtract(5,2));
   }
 }
 
