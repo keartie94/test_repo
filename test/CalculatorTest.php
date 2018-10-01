@@ -25,9 +25,15 @@ class CalculatorTest extends TestCase{
         $stub = $this->getMock('Calculator');
 
         // Configure the stub.
-        $stub->expects($this->any())
-             ->method('subtract')
-             ->will($this->returnValue(5));
+        $stub=$this->getMockBuilder('Calculator')
+                             ->disableOriginalConstructor()
+                             ->disableOriginalClone()
+                             ->disableArgumentCloning()
+                             ->disallowMockingUnknownTypes()
+                             ->getMock();
+
+       $stub->method('subtract')
+            ->willReturn(5);
 
         // $stub->doSomething('foo') returns 'foo'
         $this->assertEquals(5, $stub->subtract(7,2));
