@@ -1,8 +1,12 @@
 language: php
 php:
   - 7.1.1  #versions we want to test
+services:
+  - mysql
 before_install:
   - composer self-update --rollback
+  - mysql -u root --password "" < dump_sprint2.sql
+  - mysql -e 'create database moodle;'
 install:
   - composer require satooshi/php-coveralls:~0.6@stable #downloads coveralls
   - composer require --dev phpunit/dbunit
@@ -15,3 +19,4 @@ script:
   - phpunit --coverage-clover ./tests/logs/clover.xml #generates a coverage report for coveralls
 after_script:
   - php vendor/bin/coveralls -v #opens coveralls after build
+  - mysql -e 'SHOW DATABASES;'
