@@ -1,7 +1,7 @@
 <?php
 
 //require "vendor/autoload.php";
-require 'Calculator.php'
+require 'Calculator.php';
 
 use PHPUnit\Framework\TestCase;
 
