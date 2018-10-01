@@ -5,11 +5,13 @@ before_install:
   - composer self-update --rollback
 install:
   - composer require satooshi/php-coveralls:~0.6@stable #downloads coveralls
+  - composer require --dev phpunit/dbunit
   - composer install
 before_script:
   - mkdir -p ./tests/logs #make directory for coveralls log
 script:
   - phpunit --version
+  - dbunit --version
   - composer dump-autoload #dump dependencies for travis ci
   - phpunit --coverage-clover ./tests/logs/clover.xml #generates a coverage report for coveralls
 after_script:
