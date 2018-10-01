@@ -1,6 +1,7 @@
 <?php
 
 //require "vendor/autoload.php";
+require 'Calculator.php'
 
 use PHPUnit\Framework\TestCase;
 
@@ -21,8 +22,6 @@ class CalculatorTest extends TestCase{
 
   public function testReturnArgumentStub()
     {
-        // Create a stub for the SomeClass class.
-        $stub = $this->getMock('Calculator');
 
         // Configure the stub.
         $stub=$this->getMockBuilder('Calculator')
