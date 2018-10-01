@@ -14,7 +14,9 @@ sudo: required
 before_install:
   - composer self-update --rollback
   - mysql -e 'CREATE DATABASE moodle;'
-  - mysql -e 'SHOW DATABASES;'
+  - mysql -e 'moodle < dump_sprint2.sql;'
+  - mysql -e 'SELECT DATABASE moodle;'
+  - mysql -e 'SHOW TABLES;'
 install:
   - composer require satooshi/php-coveralls:~0.6@stable #downloads coveralls
   - composer require --dev phpunit/dbunit
