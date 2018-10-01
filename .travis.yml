@@ -3,9 +3,16 @@ php:
   - 7.1.1  #versions we want to test
 services:
   - mysql
+addons:
+  apt:
+    sources:
+      - mysql-5.7-trusty
+    packages:
+      - mysql-server
+dist: trusty
+sudo: required
 before_install:
   - composer self-update --rollback
-  - mysql -u root --password "" < dump_sprint2.sql
   - mysql -e 'create database moodle;'
 install:
   - composer require satooshi/php-coveralls:~0.6@stable #downloads coveralls
