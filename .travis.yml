@@ -13,7 +13,8 @@ dist: trusty
 sudo: required
 before_install:
   - composer self-update --rollback
-  - mysql -e 'create database moodle;'
+  - mysql -e 'CREATE DATABASE moodle;'
+  - mysql -e 'SHOW DATABASES;'
 install:
   - composer require satooshi/php-coveralls:~0.6@stable #downloads coveralls
   - composer require --dev phpunit/dbunit
@@ -26,4 +27,3 @@ script:
   - phpunit --coverage-clover ./tests/logs/clover.xml #generates a coverage report for coveralls
 after_script:
   - php vendor/bin/coveralls -v #opens coveralls after build
-  - mysql -e 'SHOW DATABASES;'
