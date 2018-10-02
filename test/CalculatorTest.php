@@ -48,7 +48,7 @@ class CalculatorTest extends TestCase{
       $stmt = $db->prepare("SELECT id FROM mdl_assignfeedback_witsoj WHERE id=1");
       $stmt->execute();
       $result = $stmt->fetchAll();
-      $this->assertEquals(array(1),$result,"Yay!");
+      $this->assertEquals(1,$result[0],"Yay!");
     }
 }
 
