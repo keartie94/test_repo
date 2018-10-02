@@ -9,3 +9,5 @@ $db = new PDO($connection_string, $mysql_user, $mysql_password);
 $stmt = $db->prepare("SELECT id FROM mdl_assignfeedback_witsoj WHERE id=1");
 $stmt->execute();
 $result = $stmt->fetchAll();
+
+echo $result;
