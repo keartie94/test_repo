@@ -38,7 +38,7 @@ class CalculatorTest extends TestCase{
         $this->assertEquals(5, $stub->subtract(7,2));
     }
 
-    public function dbTest(){
+    public function testdbTest(){
       $mysql_host = getenv('MYSQL_HOST') ?: 'localhost';
       $mysql_user = getenv('MYSQL_USER') ?: 'root';
       $mysql_password = getenv('MYSQL_PASSWORD') ?: '';
